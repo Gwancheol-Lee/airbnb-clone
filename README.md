@@ -1,3 +1,3 @@
 # Airbng Clone
 
-Cloning Airbnb with Python, Django, Tailwind and more.. 💻👀❤
+노마드코더 에어비엔비 Cloning with Python, Django, Tailwind 등등 ... 💻👀❤
