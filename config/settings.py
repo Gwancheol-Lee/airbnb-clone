@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+# 기존 장고 APPS
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,6 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+# 추가된 프로젝트 APPS
+PROJECT_APPS = [
+    "users.apps.UsersConfig",
+]
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -118,3 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = "/static/"
+
+# User Model -> users 폴더 mdoels.py의 클래스명으로 선언
+AUTH_USER_MODEL = "users.User"
