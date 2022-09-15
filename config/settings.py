@@ -40,6 +40,9 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
+# 패키지 설치 APPS
+THIRD_PARTY_APPS = ["django_countries"]
+
 # 추가된 프로젝트 APPS
 PROJECT_APPS = [
     "core.apps.CoreConfig",
