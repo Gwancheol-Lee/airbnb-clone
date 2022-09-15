@@ -19,4 +19,4 @@ class Room(core_models.TimeStampedModel):
     baths = models.IntegerField()
     check_in = models.TimeField()
     check_out = models.TimeField()
-    instant_book = models.BooleanField(default=False)
+    instant_book = models.BooleanField()
