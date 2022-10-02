@@ -17,9 +17,16 @@ class AbstractItem(core_models.TimeStampedModel):
 
 
 class RoomType(AbstractItem):
+    
+    """RoomType Object Definition"""
 
     pass
 
+class Amenity(AbstractItem):
+    
+    """Amenity Object Definition"""
+
+    pass
 
 class Room(core_models.TimeStampedModel):
 
@@ -40,6 +47,7 @@ class Room(core_models.TimeStampedModel):
     instant_book = models.BooleanField(default=False)
     host = models.ForeignKey(user_models.User, on_delete=models.CASCADE)
     room_type = models.ManyToManyField(RoomType, blank=True)
+    amenities = models.ManyToManyField(Amenity, blank=True)
 
     def __str__(self):
         return self.name
