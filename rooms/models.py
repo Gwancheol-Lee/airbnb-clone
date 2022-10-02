@@ -18,13 +18,25 @@ class AbstractItem(core_models.TimeStampedModel):
 
 class RoomType(AbstractItem):
     
-    """RoomType Object Definition"""
+    """RoomType Model Definition"""
 
     pass
 
 class Amenity(AbstractItem):
     
-    """Amenity Object Definition"""
+    """Amenity Model Definition"""
+
+    pass
+
+class Facility(AbstractItem):
+    
+    """Facility Model Definition"""
+
+    pass
+
+class HouseRule(AbstractItem):
+
+    """HouseRule Model Definition"""
 
     pass
 
@@ -48,6 +60,8 @@ class Room(core_models.TimeStampedModel):
     host = models.ForeignKey(user_models.User, on_delete=models.CASCADE)
     room_type = models.ForeignKey(RoomType, on_delete=models.SET_NULL, null=True)
     amenities = models.ManyToManyField(Amenity)
+    facilites = models.ManyToManyField(Facility)
+    house_rules = models.ManyToManyField(HouseRule)
 
     def __str__(self):
         return self.name
